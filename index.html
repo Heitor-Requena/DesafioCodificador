@@ -3,9 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decodificador</title>
+    <title>Criptografador</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
-</body>
+    <body>
+        <header class="cabecalho">
+            <nav class="cabecalho_links">
+                <img src="" alt="" class="">Alguma Imagem
+                <a href="" class="cabecalho_links_link">GitHub</a>
+                <a href="" class="cabecalho_links_link">LinkedIn</a>
+                <a href="" class="cabecalho_links_link">Instagram</a>
+            </nav>
+        </header>
+
+        <main class="conteudo">
+            <div id="caixaInput" class="conteudo_elemento">
+                <input type="text" name="txt_Usuario" id="txt_Usuario" placeholder="Insira um texto aqui" required>
+                <div class="conteudo_elemento_botoes">
+                    <button id="btn_Criptografar" class="conteudo_elemento_botoes_botao">Criptografar</button>
+                    <button id="btn_Descriptografar" class="conteudo_elemento_botoes_botao">Descriptografar</button>
+                </div>
+            </div>
+
+            <div id="caixaOutput" class="conteudo_elemento">
+                <p id="msg_Resposta" class="conteudo_elemento_">As mensagens apareceram aqui</p>
+                <button id="btn_Copiar" class="conteudo_elemento_botoes_botao">Copiar</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Desenvolvido por Heitor Requena</p>
+        </footer>
+    </body>
 </html>
