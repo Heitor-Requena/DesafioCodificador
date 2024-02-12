@@ -19,21 +19,23 @@
 
         <main class="conteudo">
             <div id="caixaInput" class="conteudo_elemento">
-                <input type="text" name="txt_Usuario" id="txt_Usuario" placeholder="Insira um texto aqui" required>
+                <textarea name="txt_Usuario" id="txt_Usuario" cols="30" rows="10" placeholder="Insira um texto aqui" required></textarea>
                 <div class="conteudo_elemento_botoes">
-                    <button id="btn_Criptografar" class="conteudo_elemento_botoes_botao">Criptografar</button>
-                    <button id="btn_Descriptografar" class="conteudo_elemento_botoes_botao">Descriptografar</button>
+                    <button id="btn_Criptografar" class="conteudo_elemento_botoes_botao" onclick="criptografar()">Criptografar</button>
+                    <button id="btn_Descriptografar" class="conteudo_elemento_botoes_botao" onclick="descriptografar()">Descriptografar</button>
                 </div>
             </div>
 
             <div id="caixaOutput" class="conteudo_elemento">
                 <p id="msg_Resposta" class="conteudo_elemento_">As mensagens apareceram aqui</p>
-                <button id="btn_Copiar" class="conteudo_elemento_botoes_botao">Copiar</button>
+                <button id="btn_Copiar" class="conteudo_elemento_botoes_botao" onclick="copiar()">Copiar</button>
             </div>
         </main>
 
         <footer>
             <p>Desenvolvido por Heitor Requena</p>
         </footer>
+
+        <script src="funcao.js"></script>
     </body>
 </html>
