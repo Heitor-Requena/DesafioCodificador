@@ -15,24 +15,21 @@ function criptografar(){
 
     caixaResposta.innerHTML = "";
 
-    palavras.forEach(function(palavra) {
-        palavra = palavra.replaceAll("e", "enter");
-        palavra = palavra.replaceAll("i", "imes");
-        palavra = palavra.replaceAll("a", "ai");
-        palavra = palavra.replaceAll("o", "ober");
-        palavra = palavra.replaceAll("u", "ufat");
-
-        msgResposta += " " + palavra;
-    });
-
-    caixaResposta.innerHTML += msgResposta;
-
-    if(hasUpper(msg)){
-        caixaResposta.innerHTML = "Não pode ter letras maíusculas.";
-    }
+    if(hasAcento(msg) || hasUpper(msg)){
+        let frase = hasUpper(msg) == true? "maiúsculas." : "com acento.";
+        caixaResposta.innerHTML = `Não pode palavras ${frase}`;
+    } else {
+        palavras.forEach(function(palavra) {
+            palavra = palavra.replaceAll("e", "enter");
+            palavra = palavra.replaceAll("i", "imes");
+            palavra = palavra.replaceAll("a", "ai");
+            palavra = palavra.replaceAll("o", "ober");
+            palavra = palavra.replaceAll("u", "ufat");
     
-    if(hasAcento(msg)){
-        caixaResposta.innerHTML = "Não pode ter acento.";
+            msgResposta += " " + palavra;
+        });
+    
+        caixaResposta.innerHTML += msgResposta;
     }
 
     /*
@@ -55,24 +52,22 @@ function descriptografar(){
 
     caixaResposta.innerHTML = "";
 
-    palavras.forEach(function(palavra) {
-        palavra = palavra.replaceAll("enter", "e");
-        palavra = palavra.replaceAll("imes", "i");
-        palavra = palavra.replaceAll("ai", "a");
-        palavra = palavra.replaceAll("ober", "o");
-        palavra = palavra.replaceAll("ufat", "u");
+    if(hasAcento(msg) || hasUpper(msg)){
+        let frase = hasUpper(msg) == true? "maiúsculas." : "com acento.";
+        caixaResposta.innerHTML = `Não pode palavras ${frase}`;
+    } else {
 
-        msgResposta += " " + palavra;
-    });
+        palavras.forEach(function(palavra) {
+            palavra = palavra.replaceAll("enter", "e");
+            palavra = palavra.replaceAll("imes", "i");
+            palavra = palavra.replaceAll("ai", "a");
+            palavra = palavra.replaceAll("ober", "o");
+            palavra = palavra.replaceAll("ufat", "u");
 
-    caixaResposta.innerHTML += msgResposta
+            msgResposta += " " + palavra;
+        });
 
-    if(hasUpper(msg)){
-        caixaResposta.innerHTML = "Não pode ter letras maíusculas.";
-    }
-    
-    if (hasAcento(msg)){
-        caixaResposta.innerHTML = "Não pode ter acento";
+        caixaResposta.innerHTML += msgResposta;
     }
 }
 
